@@ -5,9 +5,9 @@ export const HeaderStyle = styled.div`
     display: flex;
     width: 100%;
     height: 40px;
-    background: linear-gradient(120deg, #00e4d0, #5983e8);
+    background: #044c92;
     align-items: center;
-    border-bottom: 1px solid #cbcbcb;
+    border-bottom: 1px solid #044c92;
 `;
 
 export const NavLeft = styled.div`
@@ -20,18 +20,26 @@ export const ItemList = styled.ul`
     display: flex;
     list-style-type: none;
     align-items: center;
+    > li {
+        border-right: none !important;
+        &:first-child {
+            border-left: none;
+        }
+    }
     li {
-        border: 1px solid #bbb;
+        border: 1px solid #1c5a96;
         border-top: none;
         border-bottom: none;
         margin-right: -1px;
         position: relative;
-        
+
         a {
             height: 40px;
             align-items: center;
             display: flex;
-            padding: 0 10px;
+            padding: 0 20px;
+            color: white;
+            position: relative;
             &:hover {
                 background: rgba(255, 255, 255, 0.13);
             }
@@ -39,11 +47,22 @@ export const ItemList = styled.ul`
         ul {
             display: none;
             position: absolute;
+            background: white;
+            top: 40px;
             li {
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                /* border: 1px solid #ccc; */
                 &:first-child {
-                    /* border-top: none; */
+                    border-top: 1px solid #044c92;
                 }
-                border-top: 1px solid #bbb;
+                a {
+                    color: #333;
+                    &:hover {
+                        background: white;
+                    }
+                }
             }
         }
         &:hover {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { Page } from '../../../../Components/Page'
-import { HeadPage, MainPage } from '../../../../Components/Page/styled'
+import { HeadPage, MainPage, Table, PageOptionsHead, Button } from '../../../../Components/Page/styled'
 import * as selectUsers from './../../state/users/selectors';
 import { fetchUsers } from './../../../../view/Users/state/users/actions'
 import { User } from './../../models/User';
@@ -18,15 +18,21 @@ class Container extends React.Component<Props, {}> {
     componentDidMount() {
         this.props.fetchUsers();
     }
+    handleNewUser () {
+        this.props.history.push('/admin/user/new');
+    }
     render(): JSX.Element {
         const { users } = this.props;
         return (
             <Page>
                 <HeadPage>
                     <h1>Users</h1>
+                    <PageOptionsHead>
+                        <button onClick={(e)=>{ this.handleNewUser() }}>New User</button>
+                    </PageOptionsHead>
                 </HeadPage>
                 <MainPage>
-                    <table>
+                    <Table>
                         <thead>
                             <tr>
                                 <th>id</th>
@@ -57,7 +63,7 @@ class Container extends React.Component<Props, {}> {
                                 </tr>
                             ))}
                         </tbody>
-                    </table>
+                    </Table>
                 </MainPage>
             </Page>
         )

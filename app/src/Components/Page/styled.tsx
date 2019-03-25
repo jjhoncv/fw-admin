@@ -18,3 +18,30 @@ export const HeadPage = styled.div`
 export const MainPage = styled.div`
     margin-top: 20px;
 `;
+
+export const PageOptionsHead = styled.div`
+    button {
+
+    }
+`;
+
+export const Button = styled.button`
+    background: yellow;
+    color: blue;
+    border-radius: 4px;
+    padding: 8px 12px;
+`;
+
+export const Table = styled.table`
+    border-collapse: collapse;
+    width: 100%;
+    th {
+        text-align: left;
+        background:  #c0defd;
+        border-color: #91c7ff !important
+    }
+    td, th {
+        border: 1px solid #dedede;
+        padding: 10px;
+    }
+`;

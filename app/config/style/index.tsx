@@ -22,12 +22,16 @@ const css = `
         list-style-type: none;
     }
     button {
-        padding: 5px 12px;
-        background: white;
-        border: 1px solid #ccc;
+        padding: 9px 25px;
+        background: yellow;
+        border: 1px solid #e8e800;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
         &:hover {
-            background: #ddd;
-            border: 1px solid #ccc;
+            background: #ffff4e;
+            border: 1px solid #e8e800;
             cursor: pointer;
         }
     }

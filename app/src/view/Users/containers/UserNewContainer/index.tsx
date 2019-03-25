@@ -10,7 +10,32 @@ interface Props {
     history: any;
 }
 
-export const ItemForm = styled.div``;
+export const Form = styled.form`
+    label {
+        width: 200px;
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type=text]{
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        height: 20px;
+    }
+    select {
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: white;
+    }
+`;
+
+export const ItemForm = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+`;
 
 const Container: React.SFC<Props> = ({ history }) => {
 
@@ -25,31 +50,31 @@ const Container: React.SFC<Props> = ({ history }) => {
                 <button onClick={handleAddUser}>Add User</button>
             </HeadPage>
             <MainPage>
-                <form action="">
+                <Form action="">
                     <ItemForm>
-                        <label htmlFor="">role: </label>
+                        <label htmlFor="">Role </label>
                         <select>
                             <option value="1">Admin</option>
                             <option value="2">Registered User</option>
                         </select>
                     </ItemForm>
                     <ItemForm>
-                        <label htmlFor="">name: </label>
-                        <input type="text" name="name" id=""/>
+                        <label htmlFor="">Name </label>
+                        <input type="text" name="name" id="" />
                     </ItemForm>
                     <ItemForm>
-                        <label htmlFor="">surname: </label>
-                        <input type="text" name="surname" id=""/>
+                        <label htmlFor="">Surname </label>
+                        <input type="text" name="surname" id="" />
                     </ItemForm>
                     <ItemForm>
-                        <label htmlFor="">login: </label>
-                        <input type="text" name="login" id=""/>
+                        <label htmlFor="">Login </label>
+                        <input type="text" name="login" id="" />
                     </ItemForm>
                     <ItemForm>
-                        <label htmlFor="">password: </label>
-                        <input type="text" name="password" id=""/>
+                        <label htmlFor="">Password </label>
+                        <input type="text" name="password" id="" />
                     </ItemForm>
-                </form>
+                </Form>
             </MainPage>
         </Page>
     )
