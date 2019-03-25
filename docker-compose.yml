@@ -1,0 +1,13 @@
+version: "3.2"
+services:
+  node:
+    build: "./docker/dev/node"
+    volumes:
+      - ./app:/app
+    networks:
+      - frontend
+    command: "npm run start"
+    ports:
+      - "8081:8081"
+networks:
+  frontend:
