@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import login from './../../view/Login/state';
-import users from './../../view/Users/state';
-import sections from './../../view/Sections/state';
+import login from '@app/src/view/Login/state';
+import users from '@app/src/view/Users/state';
+import sections from '@app/src/view/Sections/state';
 
 const reduxDevTool = (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -15,7 +15,7 @@ render(
         <GlobalStyle />
         <Provider store={store}>
             <Router>
-                {renderRoutes(routes)}
+                {renderRoutes(routes as any)}
             </Router>
         </Provider>
     </>,

@@ -2,12 +2,22 @@
     "compilerOptions": {
         "target": "es5",
         "jsx": "react",
+        "allowJs": true,
+        "module": "esnext",
         "sourceMap": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "baseUrl": ".",
         "lib": [
             "es2015",
             "es2015.promise",
             "dom"
-        ]
+        ],
+        "paths": {
+            "@app/*": [
+                "*"
+            ]
+        },
     },
     "exclude": [
         "node_modules"

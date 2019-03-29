@@ -1,10 +1,8 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import styled from 'styled-components';
-import { Header } from '../../../../Components/Header'
-import { Footer } from '../../../../Components/Footer'
-import { Login } from '../../../../Components/Login'
+import { Login } from '@app/src/view/Login/components/Login'
 import { successLogin } from './../../../../view/Login/state/login/actions'
 import * as selectLogin from './../../state/login/selectors'
 
@@ -13,24 +11,27 @@ interface Props {
     history: any;
 }
 
-export const AdminStyled = styled.div`
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-`;
+// export const AdminStyled = styled.div`
+//     display:flex;
+//     align-items: center;
+//     justify-content: center;
+//     height: 100%;
+//     width: 70%;
+// `;
 
 export const WrapperLogin = styled.div`
-    padding: 10px 30px;
-    border: 1px solid #ccc;
+    width: 100%;
+    justify-items: center;
+    display: flex;
+    align-content: center;
 `;
 
-class Container extends React.Component<Props, {}> {
+class Container extends Component<Props, {}> {
     constructor(props) {
         super(props);
     }
     componentDidMount() {
-        const { logged, history } = this.props;
+        const { history } = this.props;
         let token = localStorage.getItem('token')
         if (token) {
             history.push('/admin/dashboard')
@@ -39,13 +40,9 @@ class Container extends React.Component<Props, {}> {
     render(): JSX.Element {
         const { history, successLogin } = this.props;
         return (
-            <AdminStyled>
-                <WrapperLogin>
-                    <Header />
-                    <Login history={history} success={successLogin} />
-                    <Footer />
-                </WrapperLogin>
-            </AdminStyled>
+            <WrapperLogin>
+                <Login history={history} success={successLogin} />
+            </WrapperLogin>
         )
     }
 }

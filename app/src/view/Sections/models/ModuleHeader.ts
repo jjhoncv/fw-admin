@@ -7,5 +7,6 @@ export interface SectionHeader {
 export interface ModuleHeader {
     id: number;
     name: string;
+    icon: string;
     sections: SectionHeader[]
 }
