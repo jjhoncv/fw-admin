@@ -7,7 +7,9 @@ interface Props {
     name?: string;
     value?: string;
     onClick?: Function;
-    onChange?: Function
+    onChange?: Function;
+    loading?: boolean;
+    error?: boolean;
 }
 
 export const Input: SFC<Props> = ({ ...props }) => (

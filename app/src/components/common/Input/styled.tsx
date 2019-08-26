@@ -20,6 +20,9 @@ export const InputStyle = styled.input`
         color: ${TextColorInput};
         width: 98%;
     `}
+    ${({ error }) => error && css`
+        border: 1px solid red;
+    `};
 
     ${({ type }) => (type === "button" || type === "submit") && css`
         background: ${BackgroundButton};

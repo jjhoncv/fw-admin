@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const BorderColor = '#e2e2e2';
 
-export const FormStyle = styled.div`
+export const FormStyle = styled.form`
     padding: 24px;
     background: #fff;
     border: 1px solid ${BorderColor};

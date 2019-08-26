@@ -9,44 +9,44 @@ import { UserListContainer } from '@app/src/view/Users/containers/UserListContai
 import { UserNewContainer } from '@app/src/view/Users/containers/UserNewContainer';
 
 class ReturnComponent extends React.Component<any, {}> {
-    constructor(props) {
-        super(props);
-    }
-    componentWillMount() {
-        location.href = '/admin';
-    }
-    render() {
-        return <></>
-    }
+  constructor(props) {
+    super(props);
+  }
+  componentWillMount() {
+    location.href = '/admin';
+  }
+  render() {
+    return <></>
+  }
 }
 
 const router = [
-    {
-        component: Dashboard,
-        routes: [
-            {
-                path: '/admin/dashboard',
-                exact: true,
-                component: Home
-            },
-            {
-                path: '/admin/users',
-                exact: true,
-                component: UserListContainer
-            },
-            {
-                path: '/admin/user/new',
-                exact: true,
-                component: UserNewContainer
-            }
-        ]
-    }];
+  {
+    component: Dashboard,
+    routes: [
+      {
+        path: '/admin/dashboard',
+        exact: true,
+        component: Home
+      },
+      {
+        path: '/admin/users',
+        exact: true,
+        component: UserListContainer
+      },
+      {
+        path: '/admin/user/new',
+        exact: true,
+        component: UserNewContainer
+      }
+    ]
+  }];
 
 
 export const Page = () => {
-    let render = <ReturnComponent />
-    if (localStorage.getItem("token")) {
-        render = <Router>{renderRoutes(router as any)}</Router>
-    }
-    return render
+  let render = <ReturnComponent />
+  if (localStorage.getItem("token")) {
+    render = <Router>{renderRoutes(router as any)}</Router>
+  }
+  return render
 }
