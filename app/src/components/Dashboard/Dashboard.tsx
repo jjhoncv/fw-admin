@@ -10,22 +10,35 @@ export const Main = styled.main`
 `;
 
 import {
-    FooterStyle,
-    WrapperFooter
+  FooterStyle,
+  WrapperFooter
 } from './styled';
 
 import { HeaderContainer } from './../../view/Sections/containers/HeaderContainer'
+import { useAuthorization } from '@app/src/utils/validations';
+import { Redirect } from 'react-router-dom';
 
-export const Dashboard = ({ route }) => (
+
+export const Dashboard = ({ route }) => {
+  const isValid = useAuthorization();
+
+  return (
     <>
-        <HeaderContainer />
-        <Main>
-            {renderRoutes(route.routes)}
-        </Main>
-        <FooterStyle>
-            <WrapperFooter>
+      {isValid ?
+        (
+          <>
+            <HeaderContainer />
+            <Main>
+              {renderRoutes(route.routes)}
+            </Main>
+            <FooterStyle>
+              <WrapperFooter>
                 © Copyright Powered Fw . All rights reserved.
             </WrapperFooter>
-        </FooterStyle>
+            </FooterStyle>
+          </>
+        ) : (<Redirect to="/" />)
+      }
     </>
-)
+  )
+}

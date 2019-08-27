@@ -5,20 +5,20 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Dashboard } from '@app/src/components/Dashboard';
 import { Home } from '@app/src/components/Home';
 
-import { UserListContainer } from '@app/src/view/Users/containers/UserListContainer';
-import { UserNewContainer } from '@app/src/view/Users/containers/UserNewContainer';
+// import { UserListContainer } from '@app/src/view/Users/containers/UserListContainer';
+// import { UserNewContainer } from '@app/src/view/Users/containers/UserNewContainer';
 
-class ReturnComponent extends React.Component<any, {}> {
-  constructor(props) {
-    super(props);
-  }
-  componentWillMount() {
-    location.href = '/admin';
-  }
-  render() {
-    return <></>
-  }
-}
+// class ReturnComponent extends React.Component<any, {}> {
+//   constructor(props) {
+//     super(props);
+//   }
+//   componentWillMount() {
+//     location.href = '/admin';
+//   }
+//   render() {
+//     return <></>
+//   }
+// }
 
 const router = [
   {
@@ -29,24 +29,24 @@ const router = [
         exact: true,
         component: Home
       },
-      {
-        path: '/admin/users',
-        exact: true,
-        component: UserListContainer
-      },
-      {
-        path: '/admin/user/new',
-        exact: true,
-        component: UserNewContainer
-      }
+      // {
+      //   path: '/admin/users',
+      //   exact: true,
+      //   component: UserListContainer
+      // },
+      // {
+      //   path: '/admin/user/new',
+      //   exact: true,
+      //   component: UserNewContainer
+      // }
     ]
   }];
 
 
-export const Page = () => {
-  let render = <ReturnComponent />
-  if (localStorage.getItem("token")) {
-    render = <Router>{renderRoutes(router as any)}</Router>
-  }
-  return render
-}
+export const Page = () => <Router>{renderRoutes(router as any)}</Router>
+  // let render = <ReturnComponent />
+  // if (localStorage.getItem("token")) {
+  // render = <Router>{renderRoutes(router as any)}</Router>
+  // }
+  // return <Router>{renderRoutes(router as any)}</Router>
+// }

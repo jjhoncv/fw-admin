@@ -13,7 +13,7 @@ export default () => {
       user: userReducer,
       form: reduxFormReducer,
       // users,
-      // sections
+      sections
     }),
     (window as any).__PRELOADED_STATE__,
     composeEnhancers(

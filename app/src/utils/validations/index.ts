@@ -13,3 +13,8 @@ export const date = (value: string) => {
 export const minLength = (min: number) => (value: string) => {
   return value ? (value.length >= min ? null : `Ingrese mínimo ${min} caracteres`) : null;
 };
+
+export const useAuthorization = () => {
+  let isValidToken = !!sessionStorage['token'];
+  return isValidToken;
+};
