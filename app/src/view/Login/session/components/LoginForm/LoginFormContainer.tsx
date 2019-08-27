@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { Form } from './Form'
+import { LoginForm } from './LoginForm'
 import { fetchLogin } from './../../state/user/actions'
 import * as selectUser from './../../state/user/selectors';
 
@@ -9,13 +9,13 @@ const FormContainerRedux = reduxForm({
   onSubmit(values, dispatch, { history }) {
     dispatch(fetchLogin(values, history));
   }
-})(Form);
+})(LoginForm);
 
 const mapStateToProps = state => ({
   errorMessage: selectUser.getErrorMessage(state),
   isFetching: selectUser.getIsFetching(state)
 });
 
-export const FormContainer = connect(
+export const LoginFormContainer = connect(
   mapStateToProps
 )(FormContainerRedux);

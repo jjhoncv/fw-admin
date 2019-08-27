@@ -3,10 +3,10 @@ import { Field } from 'redux-form';
 import { FormElement, Label, Input } from '@app/src/components/common'
 import { FormStyle } from '@app/src/components/common/Form/styled'
 import { required } from '@app/src/utils/validations';
-import { RenderInput } from './../RenderInput'
+import { RenderInput } from '@app/src/components/RenderInput'
 import { WrapperLogin, PageLogin, Error } from './styled'
 
-export const Form = ({
+export const LoginForm = ({
   handleSubmit,
   errorMessage,
   isFetching
