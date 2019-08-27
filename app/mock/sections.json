@@ -1,0 +1,112 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "Inicio",
+      "sections": [
+        {
+          "id": "1",
+          "name": "Inicio",
+          "url": "index.php"
+        },
+        {
+          "id": "2",
+          "name": "Configuraci&oacute;n de Sitio",
+          "url": "configuracion.php"
+        },
+        {
+          "id": "3",
+          "name": "Cuentas y Accesos",
+          "url": "usuarios.php"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Catalogo",
+      "sections": [
+        {
+          "id": "4",
+          "name": "Productos",
+          "url": "productos.php?cat=0"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Modulos",
+      "sections": [
+        {
+          "id": "5",
+          "name": "Formas de Pago",
+          "url": "index.php?modulo=formas_de_pago"
+        },
+        {
+          "id": "6",
+          "name": "Metodos de Envio",
+          "url": "index.php?modulo=metodos_de_envio"
+        },
+        {
+          "id": "7",
+          "name": "Atributos",
+          "url": "index.php?modulo=atributos"
+        },
+        {
+          "id": "8",
+          "name": "Banner",
+          "url": "index.php?modulo=banner"
+        },
+        {
+          "id": "9",
+          "name": "Boletines",
+          "url": "index.php?modulo=boletines"
+        },
+        {
+          "id": "10",
+          "name": "Paginas",
+          "url": "index.php?modulo=paginas"
+        },
+        {
+          "id": "11",
+          "name": "Informaciones Al Cliente",
+          "url": "index.php?modulo=informaciones_al_cliente"
+        },
+        {
+          "id": "12",
+          "name": "Novedades",
+          "url": "index.php?modulo=novedades"
+        },
+        {
+          "id": "13",
+          "name": "Ofertas",
+          "url": "index.php?modulo=ofertas"
+        },
+        {
+          "id": "14",
+          "name": "Productos Destacados",
+          "url": "index.php?modulo=productos_destacados"
+        },
+        {
+          "id": "15",
+          "name": "Productos Relacionados",
+          "url": "index.php?modulo=productos_relacionados"
+        },
+        {
+          "id": "16",
+          "name": "Widgets",
+          "url": "index.php?modulo=widgets"
+        },
+        {
+          "id": "17",
+          "name": "Pedidos",
+          "url": "index.php?modulo=pedidos"
+        },
+        {
+          "id": "18",
+          "name": "Clientes",
+          "url": "index.php?modulo=clientes"
+        }
+      ]
+    }
+  ]
+}

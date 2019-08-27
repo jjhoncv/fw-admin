@@ -1,24 +1,13 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import { BrowserRouter as Router , Redirect } from 'react-router-dom';
 import { Dashboard } from '@app/src/components/Dashboard';
 import { Home } from '@app/src/components/Home';
+import { useAuthorization } from '@app/src/utils/validations';
+
 
 // import { UserListContainer } from '@app/src/view/Users/containers/UserListContainer';
 // import { UserNewContainer } from '@app/src/view/Users/containers/UserNewContainer';
-
-// class ReturnComponent extends React.Component<any, {}> {
-//   constructor(props) {
-//     super(props);
-//   }
-//   componentWillMount() {
-//     location.href = '/admin';
-//   }
-//   render() {
-//     return <></>
-//   }
-// }
 
 const router = [
   {
@@ -43,10 +32,7 @@ const router = [
   }];
 
 
-export const Page = () => <Router>{renderRoutes(router as any)}</Router>
-  // let render = <ReturnComponent />
-  // if (localStorage.getItem("token")) {
-  // render = <Router>{renderRoutes(router as any)}</Router>
-  // }
-  // return <Router>{renderRoutes(router as any)}</Router>
-// }
+export const Page = () => {
+  const isValid = useAuthorization();
+  return isValid ? <Router>{renderRoutes(router as any)}</Router> : <Redirect to="/admin" />
+}

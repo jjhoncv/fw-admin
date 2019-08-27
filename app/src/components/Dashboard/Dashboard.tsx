@@ -1,44 +1,19 @@
-import * as React from 'react'
+import React from 'react'
 
 import { renderRoutes } from 'react-router-config';
+import { FooterStyle, WrapperFooter, Main } from './styled';
 
-import styled from 'styled-components';
+import { Menu } from './../../view/Menu'
 
-export const Main = styled.main`
-    height: calc(100% - 100px);
-    overflow-y: scroll;
-`;
+export const Dashboard = ({ route }) => (
+  <>
+    <Menu />
+    <Main>
+      {renderRoutes(route.routes)}
+    </Main>
+    <FooterStyle>
+      <WrapperFooter>© Copyright Powered Fw . All rights reserved.</WrapperFooter>
+    </FooterStyle>
+  </>
+)
 
-import {
-  FooterStyle,
-  WrapperFooter
-} from './styled';
-
-import { HeaderContainer } from './../../view/Sections/containers/HeaderContainer'
-import { useAuthorization } from '@app/src/utils/validations';
-import { Redirect } from 'react-router-dom';
-
-
-export const Dashboard = ({ route }) => {
-  const isValid = useAuthorization();
-
-  return (
-    <>
-      {isValid ?
-        (
-          <>
-            <HeaderContainer />
-            <Main>
-              {renderRoutes(route.routes)}
-            </Main>
-            <FooterStyle>
-              <WrapperFooter>
-                © Copyright Powered Fw . All rights reserved.
-            </WrapperFooter>
-            </FooterStyle>
-          </>
-        ) : (<Redirect to="/" />)
-      }
-    </>
-  )
-}

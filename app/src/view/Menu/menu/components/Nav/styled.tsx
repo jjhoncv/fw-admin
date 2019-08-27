@@ -3,42 +3,41 @@ import styled, { css } from 'styled-components';
 const BorderColor = '#e2e2e2';
 
 export const WrapperTopBar = styled.div`
-    display: flex;
-    width: 100%;
-    background: white;
-    align-items: center;
-    border-bottom: 1px solid ${BorderColor};
+  display: flex;
+  width: 100%;
+  background: white;
+  align-items: center;
+  border-bottom: 1px solid ${BorderColor};
 `;
 
 export const NavLeft = styled.div`
-    display: flex;
-    width: 100%;
-    border-left: 1px solid ${BorderColor};
-    border-right: 1px solid ${BorderColor};
-    padding-left: 4%;
-
+  display: flex;
+  width: 100%;
+  border-left: 1px solid ${BorderColor};
+  border-right: 1px solid ${BorderColor};
+  padding-left: 4%;
 `;
 
 export const NavRight = styled.div`
-    display: flex;
-    margin-right: 25px;
+  display: flex;
+  margin-right: 25px;
 `;
 
 export const Logo = styled.div`
-    display: flex;
-    width: 25px;
-    height: 25px;
-    background: #333;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 2px;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  background: #333;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
 `;
 
 export const LogoWrapper = styled.div`
-    display: flex;
-    margin: 0 25px;
+  display: flex;
+  margin: 0 25px;
 `;
 
 
@@ -106,3 +105,10 @@ export const ListStyled = styled.ul`
     }
 `;
 
+export const Error = styled.div`
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: red;
+`;

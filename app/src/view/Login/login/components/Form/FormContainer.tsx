@@ -4,7 +4,7 @@ import { Form } from './Form'
 import { fetchLogin } from './../../state/user/actions'
 import * as selectUser from './../../state/user/selectors';
 
-const FormContainer = reduxForm({
+const FormContainerRedux = reduxForm({
   form: 'loginForm',
   onSubmit(values, dispatch, { history }) {
     dispatch(fetchLogin(values, history));
@@ -16,8 +16,6 @@ const mapStateToProps = state => ({
   isFetching: selectUser.getIsFetching(state)
 });
 
-const FormContainerState = connect(
+export const FormContainer = connect(
   mapStateToProps
-)(FormContainer)
-
-export default FormContainerState;
+)(FormContainerRedux);

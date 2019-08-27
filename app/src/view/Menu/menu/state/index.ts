@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { list } from './header';
+import { section } from './section';
 
 export default combineReducers({
-    list
+    section
 });

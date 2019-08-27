@@ -16,7 +16,6 @@ const fetchLoginSuccess = (data) => ({
   data
 });
 
-
 export const fetchLogin = (values, history): Function => {
   return async dispatch => {
     dispatch(fetchLoginRequest());
@@ -30,9 +29,14 @@ export const fetchLogin = (values, history): Function => {
         history.push('/admin/dashboard');
       }
 
+      if (data.code === STATUS_CODE.UNAUTHORIZED) {
+        dispatch(fetchLoginFailure(data.message));
+      }
+
       if (data.code === STATUS_CODE.ERROR) {
         dispatch(fetchLoginFailure(data.message));
       }
+
       if (data.code === STATUS_CODE.INTERNAL_ERROR) {
         dispatch(fetchLoginFailure(data.message));
       }
@@ -51,4 +55,4 @@ export const fetchLogin = (values, history): Function => {
 //             dispatch(fetchLoginFailure('Error logout.'));
 //         }
 //     }
-// } 
+// }

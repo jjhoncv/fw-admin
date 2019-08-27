@@ -14,19 +14,3 @@ export const serviceUser = {
         }
     }
 }
-
-// {
-//     data: {
-//       code :200,
-//       data: {
-//         id: '',
-//         name: '',
-//         surname: '',
-//         mail: '',
-//         photo:'',
-//         login: '',
-//         password: ''
-//       }
-//       message: ''
-//     }
-//   }
