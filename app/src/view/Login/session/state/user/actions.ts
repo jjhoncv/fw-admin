@@ -42,6 +42,7 @@ export const fetchLogin = (values, history): Function => {
       }
 
     } catch (e) {
+
       dispatch(fetchLoginFailure('Conexión Fallida'));
     }
   }

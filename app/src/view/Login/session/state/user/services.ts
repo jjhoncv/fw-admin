@@ -5,12 +5,12 @@ import { axiosAjax } from './../../../../../config/axios';
 import { hydrateUser } from './hydrators';
 
 export const serviceUser = {
-    async login(values) {
-        try {
-            const { data } = await axiosAjax.post(url, { ...values });
-            return hydrateUser(data);
-        } catch (e) {
-            throw new Error(e.message);
-        }
+  async login(values) {
+    try {
+      const { data } = await axiosAjax.post(url, { ...values });
+      return hydrateUser(data);
+    } catch (e) {
+      throw new Error(e.message);
     }
+  }
 }
